@@ -1,0 +1,28 @@
+{
+  "name":        "ugosansh-autocomplete",
+  "version":     "1.0.0",
+  "description": "Autocomplete js component",
+  "main":        "index.js",
+  "scripts":     {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "autocomplete",
+    "input"
+  ],
+  "author":          "UgoSansH",
+  "license":         "ISC",
+  "devDependencies": {
+    "grunt":                 "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-copy":    "^1.0.0",
+    "grunt-contrib-cssmin":  "^1.0.2",
+    "grunt-contrib-uglify":  "^2.0.0",
+    "grunt-contrib-watch":   "^1.0.0",
+    "load-grunt-tasks":      "^3.5.2"
+  },
+  "dependencies": {
+    "eventemitter2": "^2.2.1"
+  }
+}

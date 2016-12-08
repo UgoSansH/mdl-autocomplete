@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+        <title>Autocomplete</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-pink.min.css" />
+        <link rel="stylesheet" href="dist/mdl-autocomplete.css" />
+
+        <style type="text/css">
+            .demo-container {
+                padding: 3em;
+                margin: 0 auto;
+                max-width: 1000px;
+            }
+
+            .demo-title {
+                color: #616161;
+                padding: 0;
+                font-size: 1.4em;
+                margin: 0 0 1.5em;
+            }
+
+            .demo-content {
+                margin-bottom: 3em;
+            }
+
+            .mdl-data-table {
+                width: 100%;
+            }
+
+            pre {
+                padding: 1em 2em;
+                background-color: #EEEEEE
+            }
+
+            .view-source {
+                position: fixed;
+                display: block;
+                right: 0;
+                bottom: 0;
+                margin-right: 40px;
+                margin-bottom: 40px;
+                z-index: 50;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+            <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+                <div class="mdl-layout__header-row">
+                    <span class="android-title mdl-layout-title">
+                        MDL Autocomplete
+                    </span>
+
+                    <div class="android-header-spacer mdl-layout-spacer"></div>
+
+                    <div class="android-navigation-container">
+                        <nav class="android-navigation mdl-navigation">
+                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Demo">Demo</a>
+                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Use">How to use</a>
+                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#ResponseFormat">Search format</a>
+                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#ResponseExample">Search example</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdl-layout__content">
+
+                <div id="Demo" class="demo-container">
+                    <h3 class="demo-title">Autocompete demo</h3>
+
+                    <div class="demo-content">
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-autocomplete">
+                            <input class="mdl-textfield__input" type="text" id="sample4" />
+                            <label class="mdl-textfield__label" for="sample4">Autocomplete...</label>
+                        </div>
+                    </div>
+
+
+                    <h3 id="Use" class="demo-title">Autocompete use</h3>
+
+                    <div class="demo-content">
+                        <pre>
+window.addEventListener('load', function() {
+    var autocomplete = new Ugosansh.Autocomplete.Component('.input-selector', {
+        path: 'search.php'
+    });
+
+    autocomplete.onChange(function(entity) {
+        console.log(entity);
+    })
+});
+                        </pre>
+                    </div>
+
+                    <h3 id="Use" class="demo-title">Parameter</h3>
+                    <div class="demo-content">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">path</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Search url (default: /search)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">search</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Search parameter name<br />
+                                        default: <em>search</em><br />
+                                        exemple: /search?<strong>search</strong>=Pinot Gris
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">minchar</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        A min char length<br />
+                                        Default: <em>2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">headers</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Javascript object headers list
+                                        Default: <em>{}</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">avatar_size</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Avatar with/height size (px)
+                                        Default: <em>34</em>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <h3 id="ResponseFormat" class="demo-title">Search response format</h3>
+
+                    <div class="demo-content">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">id</td>
+                                    <td class="mdl-data-table__cell--non-numeric">required</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Unique key reference
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">name</td>
+                                    <td class="mdl-data-table__cell--non-numeric">required</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Display label
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">image</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        Add rounded avatar item
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">content</td>
+                                    <td class="mdl-data-table__cell--non-numeric">optional</td>
+                                    <td class="mdl-data-table__cell--non-numeric">
+                                        optional content description
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <h3 id="ResponseExample" class="demo-title">Response example</h3>
+                    <div class="demo-content">
+                        <pre>
+[
+    {
+        "id": 42,
+        "name": "Pinot gris"
+    },
+    {
+        "id": 1337,
+        "name": "Gewurztraminer"
+    },
+    {
+        "id":   1338,
+        "name": "riesling"
+    },
+    {
+        "id":      1339,
+        "name":    "Saint Joseph",
+        "content": "France",
+        "image":   "https://avatars2.githubusercontent.com/u/3149526?v=3&s=80
+    },
+    {
+        "id":      1340,
+        "name":    "Crozes-Hermitage",
+        "content": "France",
+        "image":   "https://avatars2.githubusercontent.com/u/3149526?v=3&s=80"
+    }
+]
+                        </pre>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="view-source">
+                <a href="https://github.com/UgoSansH/mdl-autocomplete" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary">
+                    <i class="icon material-icons">link</i> Github
+                </a>
+            </div>
+        </div>
+
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script type="text/javascript" src="dist/mdl-autocomplete.js"></script>
+        <script type="text/javascript">
+            var path = window.location.href;
+
+            path = path.substring(0, path.lastIndexOf('/'));
+            path = path + '/search.php';
+
+            window.addEventListener('load', function() {
+                var autocomplete = new Ugosansh.Autocomplete.Component('#sample4', {
+                    path: path
+                });
+
+                autocomplete.onChange(function(entity) {
+                    console.log(entity);
+                })
+            });
+        </script>
+    </body>
+</html>

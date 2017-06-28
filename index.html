@@ -239,7 +239,7 @@ window.addEventListener('load', function() {
             var path = window.location.href;
 
             path = path.substring(0, path.lastIndexOf('/'));
-            path = path + '/search.php';
+            path = path + '/search.json';
 
             window.addEventListener('load', function() {
                 var autocomplete = new Ugosansh.Autocomplete.Component('#sample4', {

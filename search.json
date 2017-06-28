@@ -1,0 +1,26 @@
+[
+    {
+        "id": 42,
+        "name": "Pinot gris"
+    },
+    {
+        "id": 1337,
+        "name": "Gewurztraminer"
+    },
+    {
+        "id":   1338,
+        "name": "riesling"
+    },
+    {
+        "id":      1339,
+        "name":    "Saint Joseph",
+        "content": "France",
+        "image":   "https://avatars2.githubusercontent.com/u/3149526?v=3&s=80"
+    },
+    {
+        "id":      1340,
+        "name":    "Crozes-Hermitage",
+        "content": "France",
+        "image":   "https://avatars2.githubusercontent.com/u/3149526?v=3&s=80"
+    }
+]
